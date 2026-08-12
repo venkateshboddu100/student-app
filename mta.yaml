@@ -47,8 +47,7 @@ modules:
       commands:
         - npm install
         - npm run build:cf
-      supported-platforms:
-        []
+      supported-platforms: []
   - name: student-app
     type: approuter.nodejs
     path: app/router
@@ -60,7 +59,7 @@ modules:
       - name: srv-api
         group: destinations
         properties:
-          name: srv-api # must be used in xs-app.json as well
+          name: srv-api
           url: ~{srv-url}
           forwardAuthToken: true
     provides:
@@ -105,5 +104,6 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
-        - npm ci
+        - npm install
         - npx cds build --production
+        - mkdir -p gen/srv/app && cp -r app/* gen/srv/app/
