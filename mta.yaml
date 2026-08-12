@@ -61,6 +61,8 @@ modules:
         properties:
           name: srv-api
           url: ~{srv-url}
+      - name: student-app-repo-rt
+      - name: student-app-destination-service
     provides:
       - name: app-api
         properties:
@@ -78,6 +80,12 @@ resources:
       service: html5-apps-repo
       service-name: student-app-html5-service
       service-plan: app-host
+  - name: student-app-repo-rt
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-name: student-app-html5-runtime
+      service-plan: app-runtime
   - name: student-app-destination-service
     type: org.cloudfoundry.managed-service
     parameters:
@@ -105,5 +113,5 @@ build-parameters:
       commands:
         - npm install
         - npx cds build --production
-        - mkdir -p gen/srv/app/studentsui
-        - cp -r app/students-ui/webapp/* gen/srv/app/studentsui/
+        - mkdir -p gen/srv/app
+        - cp -r app/students-ui/webapp/* gen/srv/app/
