@@ -61,7 +61,6 @@ modules:
         properties:
           name: srv-api
           url: ~{srv-url}
-          forwardAuthToken: true
     provides:
       - name: app-api
         properties:
