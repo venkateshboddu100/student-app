@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student App Landing Page</title>
+    <meta charset="utf-8">
+    <title>Student Application Portal</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        a { display: inline-block; margin: 10px 0; color: #0a6ed1; font-weight: bold; }
+        body { font-family: '72', Arial, sans-serif; margin: 40px; background-color: #f7f7f7; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 500px; }
+        h2 { color: #0a6ed1; margin-top: 0; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 12px 0; }
+        a { display: block; padding: 10px 15px; background: #ebf3fc; color: #0a6ed1; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        a:hover { background: #d0e4f9; }
     </style>
 </head>
 <body>
-    <h2>Student Application Portal</h2>
-    <p>Select an option below:</p>
-    <ul>
-        <li><a href="/studentsui/webapp/index.html">Launch Fiori UI App</a></li>
-        <li><a href="/student/">OData v4 Service Endpoint</a></li>
-    </ul>
+    <div class="card">
+        <h2>Student App Portal</h2>
+        <p>అప్లికేషన్ లింక్స్:</p>
+        <ul>
+            <li><a href="/studentsui/webapp/index.html" target="_blank">Launch Fiori UI App 🚀</a></li>
+            <li><a href="/odata/v4/student/Students" target="_blank">OData v4 Students Data (JSON) 📊</a></li>
+        </ul>
+    </div>
 </body>
 </html>
