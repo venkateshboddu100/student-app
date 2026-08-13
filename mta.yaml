@@ -105,5 +105,7 @@ build-parameters:
       commands:
         - npm install
         - npx cds build --production
-        - mkdir -p gen/srv/app
-        - cp -r app/students-ui/webapp/* gen/srv/app/
+        - cd app/students-ui && npm install && npm run build --if-present
+        - cd ../..
+        - mkdir -p gen/srv/app/studentsui
+        - cp -r app/students-ui/dist/* gen/srv/app/studentsui/ || cp -r app/students-ui/webapp/* gen/srv/app/studentsui/
