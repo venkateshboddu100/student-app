@@ -6,6 +6,9 @@
     "i18n": "i18n/i18n.properties",
     "title": "Students Application",
     "description": "Student Management UI",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
     "dataSources": {
       "mainService": {
         "uri": "/student/",
