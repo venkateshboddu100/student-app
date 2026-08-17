@@ -49,6 +49,7 @@
       },
       "": {
         "dataSource": "mainService",
+        "preload": true,
         "settings": {
           "synchronizationMode": "None",
           "operationMode": "Server",
@@ -62,8 +63,27 @@
     },
     "routing": {
       "config": {},
-      "routes": [],
-      "targets": {}
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "StudentsList",
+          "target": "StudentsList"
+        }
+      ],
+      "targets": {
+        "StudentsList": {
+          "type": "Component",
+          "id": "StudentsList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/Students",
+              "entitySet": "Students",
+              "navigation": {}
+            }
+          }
+        }
+      }
     }
   }
 }
